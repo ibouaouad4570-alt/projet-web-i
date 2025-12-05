@@ -1,0 +1,1755 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>NIVORALUX — Makeup</title>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #f8f3ef;
+            --cream: #efe3d8;
+            --gold: #b48a3c;
+            --accent1: #d6007f;
+            --accent2: #ff4da6;
+            --muted: #7b6962;
+            --card: #ffffff;
+            --glass: rgba(255, 255, 255, 0.55);
+            --radius: 14px;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+            --container: 1180px;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            background: var(--bg);
+            font-family: "Poppins", sans-serif;
+            color: #2a2328;
+            -webkit-font-smoothing: antialiased
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        button {
+            font-family: inherit
+        }
+
+        /* PAGE CONTAINER */
+        .wrap {
+            max-width: var(--container);
+            margin: 24px auto;
+            padding: 0 18px;
+        }
+
+        /* NAV */
+        nav {
+            background: linear-gradient(90deg, #f1e7df, #efe3da);
+            padding: 12px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            box-shadow: 0 6px 22px rgba(0, 0, 0, 0.06);
+            position: sticky;
+            top: 12px;
+
+            width: 100%;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .brand img {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06)
+        }
+
+        .brand h1 {
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+            font-size: 18px;
+            color: var(--gold);
+            letter-spacing: 1px
+        }
+
+        .brand small {
+            display: block;
+            color: var(--muted);
+            font-size: 12px
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 12px;
+            align-items: center
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 8px;
+            align-items: center
+        }
+
+        .nav-links a {
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            color: var(--gold);
+            transition: all .2s
+        }
+
+        .nav-links a:hover {
+            background: #ffdce6;
+            color: #fff
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.03);
+            padding: 6px;
+            border-radius: 10px;
+            gap: 8px;
+        }
+
+        .search input {
+            border: 0;
+            background: transparent;
+            padding: 6px 8px;
+            outline: none;
+            font-size: 14px
+        }
+
+        .icon-btn {
+            background: transparent;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            padding: 8px 10px;
+            border-radius: 10px;
+            cursor: pointer
+        }
+
+        /* CART */
+        .cart {
+            position: relative
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -6px;
+            left: -6px;
+            background: var(--accent1);
+            color: #fff;
+            padding: 4px 7px;
+            border-radius: 50%;
+            font-size: 12px;
+            font-weight: 700
+        }
+
+        /* HERO */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 26px;
+            align-items: center;
+            margin: 22px 0
+        }
+
+        .hero-card {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.7));
+            border-radius: 14px;
+            padding: 26px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            gap: 12px
+        }
+
+        .kicker {
+            font-size: 13px;
+            color: var(--muted);
+            font-weight: 700
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 34px;
+            margin: 0;
+
+            color: #b48a3c;
+        }
+
+        .hero-sub {
+            color: black;
+            line-height: 1.6;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 12px;
+            margin-top: 8px;
+            flex-wrap: wrap
+        }
+
+        .btn {
+            background: linear-gradient(45deg, var(--accent2), var(--accent1));
+            color: #fff;
+            padding: 12px 18px;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+            box-shadow: 0 6px 18px rgba(214, 0, 127, 0.12);
+            transition: transform .18s ease, opacity .18s;
+        }
+
+        .btn:active {
+            transform: translateY(1px)
+        }
+
+        .btn.alt {
+            background: transparent;
+            border: 1.5px solid rgba(43, 35, 36, 0.06);
+            color: var(--gold);
+            font-weight: 600
+        }
+
+        .hero-features {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 12px
+        }
+
+        .feature {
+            background: var(--glass);
+            padding: 10px;
+            border-radius: 10px;
+            min-width: 130px
+        }
+
+        .highlight {
+            background: var(--card);
+            border-radius: 14px;
+            padding: 18px;
+            text-align: center;
+            box-shadow: var(--shadow)
+        }
+
+        .highlight img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px
+        }
+
+        .highlight h3 {
+            margin: 12px 0 6px 0;
+            font-family: 'Playfair Display', serif;
+            color: var(--gold)
+        }
+
+        .highlight p {
+            color: var(--muted);
+            font-size: 14px
+        }
+
+        /* CONTROLS */
+        .controls {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 18px 0;
+            justify-content: space-between
+        }
+
+        .filters {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            flex-wrap: wrap
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            padding: 8px 12px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600
+        }
+
+        .filter-btn.active {
+            background: var(--gold);
+            color: #fff;
+            border-color: var(--gold)
+        }
+
+        /* GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-bottom: 30px
+        }
+
+        .card {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 12px;
+            box-shadow: 0 8px 26px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transition: transform .18s, box-shadow .18s
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08)
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 8px
+        }
+
+        .card .meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        .card h4 {
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            color: var(--gold);
+            font-size: 16px
+        }
+
+        .card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        .price {
+            font-weight: 800;
+            color: var(--accent1)
+        }
+
+        .card .actions {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            margin-top: auto
+        }
+
+
+
+        /* FOOTER */
+        footer {
+            background: #f5f0ec;
+            padding: 22px;
+            border-radius: 10px;
+            margin-top: 26px;
+            border-top: 1px solid #e9ddd0
+        }
+
+        .footer-text {
+            color: var(--muted);
+            font-size: 15px;
+            margin-bottom: 12px
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 12px;
+            justify-content: center
+        }
+
+        .icon {
+            width: 36px;
+            height: 36px;
+            transition: transform .18s;
+            cursor: pointer
+        }
+
+        .icon:hover {
+            transform: scale(1.12)
+        }
+
+        /* MODALS */
+        .modal {
+            position: fixed;
+            inset: 0;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.45);
+            z-index: 120;
+            padding: 18px
+        }
+
+        .modal.open {
+            display: flex
+        }
+
+        .modal-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 18px;
+            max-width: 880px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px
+        }
+
+        .modal-card img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            border-radius: 8px
+        }
+
+        .close-btn {
+            background: transparent;
+            border: none;
+            font-size: 20px;
+            cursor: pointer
+        }
+
+        /* MOBILE */
+        @media (max-width:980px) {
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 14px
+            }
+
+            .grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .modal-card {
+                grid-template-columns: 1fr
+            }
+
+            .modal-card img {
+                height: 320px
+            }
+
+            .highlight img {
+                height: 220px
+            }
+        }
+
+        @media (max-width:640px) {
+            .grid {
+                grid-template-columns: 1fr
+            }
+
+            .nav-links {
+                display: none
+            }
+
+            nav {
+                padding: 10px
+            }
+
+            .search {
+                display: none
+            }
+
+            .hero-title {
+                font-size: 28px
+            }
+
+            .brand h1 {
+                font-size: 16px
+            }
+
+            .wrap {
+                padding: 0 12px
+            }
+        }
+
+        /* small utilities */
+        .muted {
+            color: var(--muted)
+        }
+
+        .text-right {
+            text-align: right
+        }
+
+        .text-left {
+            text-align: left
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+
+        <!-- NAV -->
+        <nav aria-label="الرئيسية">
+            <div class="brand" role="img" aria-label="Nivoralux logo">
+                <img src="IMAGE PROJET.jpg" alt="شعار Nivoralux" />
+                <div>
+                    <h1>NIVORALUX</h1>
+                    <small>Makeup & Parfums</small>
+                </div>
+            </div>
+
+            <div class="nav-right" role="navigation" aria-label="روابط">
+                <div class="nav-links" aria-hidden="false">
+                    <a href="acceuille de proet ih nno no.html">Accueil</a>
+                    <a href="#">maquillage</a>
+                    <a href="parfum.html">Parfum</a>
+
+                </div>
+
+                <div class="search" role="search" aria-label="بحث">
+                    <input id="search-input" type="search" placeholder="بحث عن منتج..." aria-label="بحث عن منتج">
+                </div>
+
+                <div class="cart" title="السلة" aria-live="polite" aria-atomic="true">
+                    <button id="open-cart" class="icon-btn" aria-haspopup="dialog"
+                        aria-controls="cart-modal">🛒</button>
+                    <div class="cart-badge" id="cart-count" aria-hidden="false">0</div>
+                </div>
+            </div>
+        </nav>
+
+
+
+    </div>
+    </div>
+
+
+    </section>
+
+    <!-- CONTROLS -->
+    <div class="controls" role="toolbar" aria-label="فلاتر وترتيب">
+        <div class="filters" aria-label="فلاتر">
+            <button class="filter-btn active" data-filter="all">الكل</button>
+            <button class="filter-btn" data-filter="Foundation">Foundation</button>
+            <button class="filter-btn" data-filter="Palette">Palettes</button>
+            <button class="filter-btn" data-filter="Mascara">Mascara</button>
+            <button class="filter-btn" data-filter="Blender">Beauty Blender</button>
+            <button class="filter-btn" data-filter="Pinceaux">Pinceaux</button>
+            <button class="filter-btn" data-filter="Lipstick">Rouge à Lèvre</button>
+            <button class="filter-btn" data-filter="blush">blush</button>
+            <button class="filter-btn" data-filter="lip LINER">lip LINER</button>
+            <button class="filter-btn" data-filter="lES CILS">lES CILS</button>
+            <button class="filter-btn" data-filter="LES GLOSES">lES GLOSES</button>
+        </div>
+
+        <div style="display:flex;gap:10px;align-items:center">
+            <label for="sort" style="color:var(--muted);font-size:14px">ترتيب</label>
+            <select id="sort" style="padding:8px;border-radius:10px;border:1px solid rgba(0,0,0,.06)">
+                <option value="default">الافتراضي</option>
+                <option value="price-asc">الثمن ↑</option>
+                <option value="price-desc">الثمن ↓</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- PRODUCTS GRID -->
+    <section id="products" class="grid" aria-live="polite" aria-label="قائمة المنتجات">
+        <!-- Template: fill products via HTML for speed (replace image paths) -->
+        <article class="card" data-category="Foundation" data-id="f1" data-price="180" tabindex="0">
+            <img src="FOU 1.jpg" alt="Satin Foundation — Beige" loading="lazy">
+            <div class="meta">
+                <h4>Satin Foundation </h4>
+                <div class="price">180 DH</div>
+            </div>
+            <p>فوندوتان يمنحك توحيد مثالي للبشرة البيضاء بملمس خفيف، تغطية طبيعية، ولمسة مضيئة تدوم طوال اليوم</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('f1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="Foundation" data-id="f1" data-price="180" tabindex="0">
+            <img src="FOU 2.jpg" alt="Satin Foundation — Beige" loading="lazy">
+            <div class="meta">
+                <h4>Satin Foundation </h4>
+                <div class="price">180 DH</div>
+            </div>
+            <p>• تغطية مخملية تُبرز عمق وجمال البشرة السمراء بدون لمعان زائد.
+            </p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('f1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="Foundation" data-id="f1" data-price="180" tabindex="0">
+            <img src="FOU 4.jpg" alt="Satin Foundation — Beige" loading="lazy">
+            <div class="meta">
+                <h4>Satin Foundation </h4>
+                <div class="price">180 DH</div>
+            </div>
+            <p>فوندوتان ينسجم مع العمق الحقيقي للبشرة السوداء، بدون رمادية وبدون لمعان زائد</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('f1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="Foundation" data-id="f1" data-price="180" tabindex="0">
+            <img src="FOU 3.jpg" alt="Satin Foundation — Beige" loading="lazy">
+            <div class="meta">
+                <h4>Satin Foundation </h4>
+                <div class="price">180 DH</div>
+            </div>
+            <p>"فوندوتان يمنح البشرة القمحية توحيداً طبيعياً وإشراقة دافئة مع تغطية خفيفة-متوسطة تدوم طوال اليوم</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('f1')">إضافة للسلة</button>
+            </div>
+        </article>
+
+        <article class="card" data-category="Palette" data-id="p1" data-price="150" tabindex="0">
+            <img src="R.jpg" alt="Eyes Palette — Warm" loading="lazy">
+            <div class="meta">
+                <h4>Eyes Palette </h4>
+                <div class="price">150 DH</div>
+            </div>
+            <p>لوحة ألوان دافئة بمات ولامع — مناسبة للسهرات.</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('p1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="Palette" data-id="p1" data-price="150" tabindex="0">
+            <img src="RR.jpg" alt="Eyes Palette — Warm" loading="lazy">
+            <div class="meta">
+                <h4>Eyes Palette </h4>
+                <div class="price">150 DH</div>
+            </div>
+            <p>لوحة ألوان دافئة بمات ولامع — مناسبة للسهرات.</p>
+            <div class="actions">
+                <button class="btn" onclick="addToCart('p1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="Palette" data-id="p1" data-price="150" tabindex="0">
+            <img src="RRR.jpg" alt="Eyes Palette — Warm" loading="lazy">
+            <div class="meta">
+                <h4>Eyes Palette </h4>
+                <div class="price">150 DH</div>
+            </div>
+            <p>لوحة ألوان دافئة بمات ولامع — مناسبة للسهرات.</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('p1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="Palette" data-id="p1" data-price="150" tabindex="0">
+            <img src="RRRR.jpg" alt="Eyes Palette — Warm" loading="lazy">
+            <div class="meta">
+                <h4>Eyes Palette </h4>
+                <div class="price">150 DH</div>
+            </div>
+            <p>لوحة ألوان دافئة بمات ولامع — مناسبة للسهرات.</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('p1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="Palette" data-id="p1" data-price="150" tabindex="0">
+            <img src="RRRRR.jpg" alt="Eyes Palette — Warm" loading="lazy">
+            <div class="meta">
+                <h4>Eyes Palette </h4>
+                <div class="price">150 DH</div>
+            </div>
+            <p>لوحة ألوان دافئة بمات ولامع — مناسبة للسهرات.</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('p1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="Palette" data-id="p1" data-price="150" tabindex="0">
+            <img src="RRRRRR.jpg" alt="Eyes Palette — Warm" loading="lazy">
+            <div class="meta">
+                <h4>Eyes Palette </h4>
+                <div class="price">150 DH</div>
+            </div>
+            <p>لوحة ألوان دافئة بمات ولامع — مناسبة للسهرات.</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('p1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="Palette" data-id="p1" data-price="150" tabindex="0">
+            <img src="RRRRRRR.jpg" alt="Eyes Palette — Warm" loading="lazy">
+            <div class="meta">
+                <h4>Eyes Palette </h4>
+                <div class="price">150 DH</div>
+            </div>
+            <p>لوحة ألوان دافئة بمات ولامع — مناسبة للسهرات.</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('p1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="Palette" data-id="p1" data-price="150" tabindex="0">
+            <img src="RRRRRRRR.jpg" alt="Eyes Palette — Warm" loading="lazy">
+            <div class="meta">
+                <h4>Eyes Palette </h4>
+                <div class="price">150 DH</div>
+            </div>
+            <p>لوحة ألوان دافئة بمات ولامع — مناسبة للسهرات.</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('p1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="Palette" data-id="p1" data-price="150" tabindex="0">
+            <img src="RRRRRRRRR.jpg" alt="Eyes Palette — Warm" loading="lazy">
+            <div class="meta">
+                <h4>Eyes Palette </h4>
+                <div class="price">150 DH</div>
+            </div>
+            <p>لوحة ألوان دافئة بمات ولامع — مناسبة للسهرات.</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('p1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="Palette" data-id="p1" data-price="150" tabindex="0">
+            <img src="RRRRRRRRRRRRRRRRRRR.jpg" alt="Eyes Palette — Warm" loading="lazy">
+            <div class="meta">
+                <h4>Eyes Palette </h4>
+                <div class="price">150 DH</div>
+            </div>
+            <p>لوحة ألوان دافئة بمات ولامع — مناسبة للسهرات.</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('p1')">إضافة للسلة</button>
+            </div>
+        </article>
+
+
+
+        <article class="card" data-category="Mascara" data-id="m1" data-price="90" tabindex="0">
+            <img src="y.jpg" alt="Mascara " loading="lazy">
+            <div class="meta">
+                <h4>Mascara </h4>
+                <div class="price">90 DH</div>
+            </div>
+            <p>تكثيف ورفع للرموش بلا تكتل.</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('m1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="Mascara" data-id="m1" data-price="90" tabindex="0">
+            <img src="yy.jpg" alt="Mascara " loading="lazy">
+            <div class="meta">
+                <h4>Mascara </h4>
+                <div class="price">90 DH</div>
+            </div>
+            <p>تكثيف ورفع للرموش بلا تكتل.</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('m1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="Mascara" data-id="m1" data-price="90" tabindex="0">
+            <img src="yyy.jpg" alt="Mascara " loading="lazy">
+            <div class="meta">
+                <h4>Mascara </h4>
+                <div class="price">90 DH</div>
+            </div>
+            <p>تكثيف ورفع للرموش بلا تكتل.</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('m1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="Mascara" data-id="m1" data-price="90" tabindex="0">
+            <img src="yyyy.jpg" alt="Mascara " loading="lazy">
+            <div class="meta">
+                <h4>Mascara </h4>
+                <div class="price">90 DH</div>
+            </div>
+            <p>تكثيف ورفع للرموش بلا تكتل.</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('m1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="Mascara" data-id="m1" data-price="90" tabindex="0">
+            <img src="yyyyy.jpg" alt="Mascara " loading="lazy">
+            <div class="meta">
+                <h4>Mascara </h4>
+                <div class="price">90 DH</div>
+            </div>
+            <p>تكثيف ورفع للرموش بلا تكتل.</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('m1')">إضافة للسلة</button>
+            </div>
+        </article>
+
+
+
+
+
+
+        <article class="card" data-category="Lipstick" data-id="l1" data-price="110" tabindex="0">
+            <img src="C.jpg" alt="Rouge à Lèvre — Rouge" loading="lazy">
+            <div class="meta">
+                <h4>Rouge à Lèvre </h4>
+                <div class="price">110 DH</div>
+            </div>
+            <p>لون غني وترطيب مع لمسة نهائية شبه لامعة.</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="Lipstick" data-id="l1" data-price="110" tabindex="0">
+            <img src="D.jpg" alt="Rouge à Lèvre — Rouge" loading="lazy">
+            <div class="meta">
+                <h4>Rouge à Lèvre </h4>
+                <div class="price">110 DH</div>
+            </div>
+            <p>لون غني وترطيب مع لمسة نهائية شبه لامعة.</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="Lipstick" data-id="l1" data-price="110" tabindex="0">
+            <img src="E.jpg" alt="Rouge à Lèvre — Rouge" loading="lazy">
+            <div class="meta">
+                <h4>Rouge à Lèvre </h4>
+                <div class="price">110 DH</div>
+            </div>
+            <p>لون غني وترطيب مع لمسة نهائية شبه لامعة.</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="Lipstick" data-id="l1" data-price="110" tabindex="0">
+            <img src="F.jpg" alt="Rouge à Lèvre — Rouge" loading="lazy">
+            <div class="meta">
+                <h4>Rouge à Lèvre </h4>
+                <div class="price">110 DH</div>
+            </div>
+            <p>لون غني وترطيب مع لمسة نهائية شبه لامعة.</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="Lipstick" data-id="l1" data-price="110" tabindex="0">
+            <img src="G.jpg" alt="Rouge à Lèvre — Rouge" loading="lazy">
+            <div class="meta">
+                <h4>Rouge à Lèvre </h4>
+                <div class="price">110 DH</div>
+            </div>
+            <p>لون غني وترطيب مع لمسة نهائية شبه لامعة.</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="Lipstick" data-id="l1" data-price="110" tabindex="0">
+            <img src="J.jpg" alt="Rouge à Lèvre — Rouge" loading="lazy">
+            <div class="meta">
+                <h4>Rouge à Lèvre </h4>
+                <div class="price">110 DH</div>
+            </div>
+            <p>لون غني وترطيب مع لمسة نهائية شبه لامعة.</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="Lipstick" data-id="l1" data-price="110" tabindex="0">
+            <img src="H.jpg" alt="Rouge à Lèvre — Rouge" loading="lazy">
+            <div class="meta">
+                <h4>Rouge à Lèvre </h4>
+                <div class="price">110 DH</div>
+            </div>
+            <p>لون غني وترطيب مع لمسة نهائية شبه لامعة.</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="Lipstick" data-id="l1" data-price="110" tabindex="0">
+            <img src="I.jpg" alt="Rouge à Lèvre — Rouge" loading="lazy">
+            <div class="meta">
+                <h4>Rouge à Lèvre </h4>
+                <div class="price">110 DH</div>
+            </div>
+            <p>لون غني وترطيب مع لمسة نهائية شبه لامعة.</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="Lipstick" data-id="l1" data-price="110" tabindex="0">
+            <img src="K.jpg" alt="Rouge à Lèvre — Rouge" loading="lazy">
+            <div class="meta">
+                <h4>Rouge à Lèvre </h4>
+                <div class="price">110 DH</div>
+            </div>
+            <p>لون غني وترطيب مع لمسة نهائية شبه لامعة.</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="Lipstick" data-id="l1" data-price="110" tabindex="0">
+            <img src="L.jpg" alt="Rouge à Lèvre — Rouge" loading="lazy">
+            <div class="meta">
+                <h4>Rouge à Lèvre </h4>
+                <div class="price">110 DH</div>
+            </div>
+            <p>لون غني وترطيب مع لمسة نهائية شبه لامعة.</p>
+            <div class="actions">
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="Lipstick" data-id="l1" data-price="110" tabindex="0">
+            <img src="M.jpg" alt="Rouge à Lèvre — Rouge" loading="lazy">
+            <div class="meta">
+                <h4>Rouge à Lèvre </h4>
+                <div class="price">110 DH</div>
+            </div>
+            <p>لون غني وترطيب مع لمسة نهائية شبه لامعة.</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="Lipstick" data-id="l1" data-price="110" tabindex="0">
+            <img src="N.jpg" alt="Rouge à Lèvre — Rouge" loading="lazy">
+            <div class="meta">
+                <h4>Rouge à Lèvre </h4>
+                <div class="price">110 DH</div>
+            </div>
+            <p>لون غني وترطيب مع لمسة نهائية شبه لامعة.</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+
+
+
+        <article class="card" data-category="blush" data-id="l1" data-price="110" tabindex="0">
+            <img src="22.jpg" alt="Rouge à Lèvre — Rouge" loading="lazy">
+            <div class="meta">
+                <h4>blush </h4>
+                <div class="price">123DH</div>
+            </div>
+            <p>بلاشر فاخر بتركيبة ناعمة وخفيفة، يمنح وجنتيك توهّجًا طبيعيًا بلون وردي أنيق يدوم طوال اليوم</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="blush" data-id="l1" data-price="110" tabindex="0">
+            <img src="33.jpg" alt="Rouge à Lèvre — Rouge" loading="lazy">
+            <div class="meta">
+                <h4>blush </h4>
+                <div class="price">123DH</div>
+            </div>
+            <p>بلاشر فاخر بتركيبة ناعمة وخفيفة، يمنح وجنتيك توهّجًا طبيعيًا بلون وردي أنيق يدوم طوال اليوم</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="blush" data-id="l1" data-price="110" tabindex="0">
+            <img src="44.jpg" alt="Rouge à Lèvre — Rouge" loading="lazy">
+            <div class="meta">
+                <h4>blush </h4>
+                <div class="price">123DH</div>
+            </div>
+            <p>بلاشر فاخر بتركيبة ناعمة وخفيفة، يمنح وجنتيك توهّجًا طبيعيًا بلون وردي أنيق يدوم طوال اليوم</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="blush" data-id="l1" data-price="110" tabindex="0">
+            <img src="55.jpg" alt="Rouge à Lèvre — Rouge" loading="lazy">
+            <div class="meta">
+                <h4>blush </h4>
+                <div class="price">123DH</div>
+            </div>
+            <p>بلاشر فاخر بتركيبة ناعمة وخفيفة، يمنح وجنتيك توهّجًا طبيعيًا بلون وردي أنيق يدوم طوال اليوم</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="blush" data-id="l1" data-price="110" tabindex="0">
+            <img src="66.jpg" alt="Rouge à Lèvre — Rouge" loading="lazy">
+            <div class="meta">
+                <h4>blush </h4>
+                <div class="price">123DH</div>
+            </div>
+            <p>بلاشر فاخر بتركيبة ناعمة وخفيفة، يمنح وجنتيك توهّجًا طبيعيًا بلون وردي أنيق يدوم طوال اليوم</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="blush" data-id="l1" data-price="110" tabindex="0">
+            <img src="77.jpg" alt="Rouge à Lèvre — Rouge" loading="lazy">
+            <div class="meta">
+                <h4>blush </h4>
+                <div class="price">123DH</div>
+            </div>
+            <p>بلاشر فاخر بتركيبة ناعمة وخفيفة، يمنح وجنتيك توهّجًا طبيعيًا بلون وردي أنيق يدوم طوال اليوم</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="blush" data-id="l1" data-price="110" tabindex="0">
+            <img src="88.jpg" alt="Rouge à Lèvre — Rouge" loading="lazy">
+            <div class="meta">
+                <h4>blush </h4>
+                <div class="price">123DH</div>
+            </div>
+            <p>بلاشر فاخر بتركيبة ناعمة وخفيفة، يمنح وجنتيك توهّجًا طبيعيًا بلون وردي أنيق يدوم طوال اليوم</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="blush" data-id="l1" data-price="110" tabindex="0">
+            <img src="99.jpg" alt="Rouge à Lèvre — Rouge" loading="lazy">
+            <div class="meta">
+                <h4>blush </h4>
+                <div class="price">123DH</div>
+            </div>
+            <p>بلاشر فاخر بتركيبة ناعمة وخفيفة، يمنح وجنتيك توهّجًا طبيعيًا بلون وردي أنيق يدوم طوال اليوم</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="blush" data-id="l1" data-price="110" tabindex="0">
+            <img src="111.jpg" alt="Rouge à Lèvre — Rouge" loading="lazy">
+            <div class="meta">
+                <h4>blush </h4>
+                <div class="price">123DH</div>
+            </div>
+            <p>بلاشر فاخر بتركيبة ناعمة وخفيفة، يمنح وجنتيك توهّجًا طبيعيًا بلون وردي أنيق يدوم طوال اليوم</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="blush" data-id="l1" data-price="110" tabindex="0">
+            <img src="222.jpg" alt="Rouge à Lèvre — Rouge" loading="lazy">
+            <div class="meta">
+                <h4>blush </h4>
+                <div class="price">123DH</div>
+            </div>
+            <p>بلاشر فاخر بتركيبة ناعمة وخفيفة، يمنح وجنتيك توهّجًا طبيعيًا بلون وردي أنيق يدوم طوال اليوم</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="blush" data-id="l1" data-price="110" tabindex="0">
+            <img src="333.jpg" alt="Rouge à Lèvre — Rouge" loading="lazy">
+            <div class="meta">
+                <h4>blush </h4>
+                <div class="price">123DH</div>
+            </div>
+            <p>بلاشر فاخر بتركيبة ناعمة وخفيفة، يمنح وجنتيك توهّجًا طبيعيًا بلون وردي أنيق يدوم طوال اليوم</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+
+
+
+
+
+
+
+        <article class="card" data-category="Pinceaux" data-id="l1" data-price="110" tabindex="0">
+            <img src="1.jpg" alt="Pinceaux" loading="lazy">
+            <div class="meta">
+                <h4>LES Pinceaux </h4>
+                <div class="price">100DH</div>
+            </div>
+            <p>اكتشفي سر الإطلالة المتقنة مع فرشنا الفاخرة المصممة خصيصًا لتمنحك لمسة فنية بكل سحبة، شعيرات ناعمة
+                كلمسة حرير، ونتائج بمستوى احترافي."
+            </p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="Pinceaux" data-id="l1" data-price="110" tabindex="0">
+            <img src="2.jpg" alt="Pinceaux" loading="lazy">
+            <div class="meta">
+                <h4>LES Pinceaux </h4>
+                <div class="price">100DH</div>
+            </div>
+            <p>اكتشفي سر الإطلالة المتقنة مع فرشنا الفاخرة المصممة خصيصًا لتمنحك لمسة فنية بكل سحبة، شعيرات ناعمة
+                كلمسة حرير، ونتائج بمستوى احترافي."
+            </p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="Pinceaux" data-id="l1" data-price="110" tabindex="0">
+            <img src="3.jpg" alt="Pinceaux" loading="lazy">
+            <div class="meta">
+                <h4>LES Pinceaux </h4>
+                <div class="price">100DH</div>
+            </div>
+            <p>اكتشفي سر الإطلالة المتقنة مع فرشنا الفاخرة المصممة خصيصًا لتمنحك لمسة فنية بكل سحبة، شعيرات ناعمة
+                كلمسة حرير، ونتائج بمستوى احترافي."
+            </p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="Pinceaux" data-id="l1" data-price="110" tabindex="0">
+            <img src="4.jpg" alt="Pinceaux" loading="lazy">
+            <div class="meta">
+                <h4>LES Pinceaux </h4>
+                <div class="price">100DH</div>
+            </div>
+            <p>اكتشفي سر الإطلالة المتقنة مع فرشنا الفاخرة المصممة خصيصًا لتمنحك لمسة فنية بكل سحبة، شعيرات ناعمة
+                كلمسة حرير، ونتائج بمستوى احترافي."
+            </p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="Pinceaux" data-id="l1" data-price="110" tabindex="0">
+            <img src="5.jpg" alt="Pinceaux" loading="lazy">
+            <div class="meta">
+                <h4>LES Pinceaux </h4>
+                <div class="price">100DH</div>
+            </div>
+            <p>اكتشفي سر الإطلالة المتقنة مع فرشنا الفاخرة المصممة خصيصًا لتمنحك لمسة فنية بكل سحبة، شعيرات ناعمة
+                كلمسة حرير، ونتائج بمستوى احترافي."
+            </p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="Pinceaux" data-id="l1" data-price="110" tabindex="0">
+            <img src="6.jpg" alt="Pinceaux" loading="lazy">
+            <div class="meta">
+                <h4>LES Pinceaux </h4>
+                <div class="price">100DH</div>
+            </div>
+            <p>اكتشفي سر الإطلالة المتقنة مع فرشنا الفاخرة المصممة خصيصًا لتمنحك لمسة فنية بكل سحبة، شعيرات ناعمة
+                كلمسة حرير، ونتائج بمستوى احترافي."
+            </p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="Pinceaux" data-id="l1" data-price="110" tabindex="0">
+            <img src="7.jpg" alt="Pinceaux" loading="lazy">
+            <div class="meta">
+                <h4>LES Pinceaux </h4>
+                <div class="price">100DH</div>
+            </div>
+            <p>اكتشفي سر الإطلالة المتقنة مع فرشنا الفاخرة المصممة خصيصًا لتمنحك لمسة فنية بكل سحبة، شعيرات ناعمة
+                كلمسة حرير، ونتائج بمستوى احترافي."
+            </p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="Pinceaux" data-id="l1" data-price="110" tabindex="0">
+            <img src="8.jpg" alt="Pinceaux" loading="lazy">
+            <div class="meta">
+                <h4>LES Pinceaux </h4>
+                <div class="price">100DH</div>
+            </div>
+            <p>اكتشفي سر الإطلالة المتقنة مع فرشنا الفاخرة المصممة خصيصًا لتمنحك لمسة فنية بكل سحبة، شعيرات ناعمة
+                كلمسة حرير، ونتائج بمستوى احترافي."
+            </p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="Pinceaux" data-id="l1" data-price="110" tabindex="0">
+            <img src="9.jpg" alt="Pinceaux" loading="lazy">
+            <div class="meta">
+                <h4>LES Pinceaux </h4>
+                <div class="price">100DH</div>
+            </div>
+            <p>اكتشفي سر الإطلالة المتقنة مع فرشنا الفاخرة المصممة خصيصًا لتمنحك لمسة فنية بكل سحبة، شعيرات ناعمة
+                كلمسة حرير، ونتائج بمستوى احترافي."
+            </p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+
+
+
+
+
+
+
+        <article class="card" data-category="lip LINER" data-id="l1" data-price="110" tabindex="0">
+            <img src="UU.jpg" alt="lip LINER" loading="lazy">
+            <div class="meta">
+                <h4>lip LINER </h4>
+                <div class="price">100DH</div>
+            </div>
+            <p>ارسمي حدود الجمال بدقة مع قلم الشفاه الفاخر، ثبات يدوم وسلاسة في التطبيق لإطلالة متقنة كل يوم.
+
+            </p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="lip LINER" data-id="l1" data-price="110" tabindex="0">
+            <img src="UUU.jpg" alt="lip LINER" loading="lazy">
+            <div class="meta">
+                <h4>lip LINER </h4>
+                <div class="price">100DH</div>
+            </div>
+            <p>ارسمي حدود الجمال بدقة مع قلم الشفاه الفاخر، ثبات يدوم وسلاسة في التطبيق لإطلالة متقنة كل يوم.
+
+            </p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="lip LINER" data-id="l1" data-price="110" tabindex="0">
+            <img src="UUUUUUU.jpg" alt="lip LINER" loading="lazy">
+            <div class="meta">
+                <h4>lip LINER </h4>
+                <div class="price">100DH</div>
+            </div>
+            <p>ارسمي حدود الجمال بدقة مع قلم الشفاه الفاخر، ثبات يدوم وسلاسة في التطبيق لإطلالة متقنة كل يوم.
+
+            </p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="lip LINER" data-id="l1" data-price="110" tabindex="0">
+            <img src="UUUUUUUU.jpg" alt="lip LINER" loading="lazy">
+            <div class="meta">
+                <h4>lip LINER </h4>
+                <div class="price">100DH</div>
+            </div>
+            <p>ارسمي حدود الجمال بدقة مع قلم الشفاه الفاخر، ثبات يدوم وسلاسة في التطبيق لإطلالة متقنة كل يوم.
+
+            </p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="lip LINER" data-id="l1" data-price="110" tabindex="0">
+            <img src="UUUUUUUUUU.jpg" alt="lip LINER" loading="lazy">
+            <div class="meta">
+                <h4>lip LINER </h4>
+                <div class="price">100DH</div>
+            </div>
+            <p>ارسمي حدود الجمال بدقة مع قلم الشفاه الفاخر، ثبات يدوم وسلاسة في التطبيق لإطلالة متقنة كل يوم.
+
+            </p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="lip LINER" data-id="l1" data-price="110" tabindex="0">
+            <img src="UUUUUUUUUUUU.jpg" alt="lip LINER" loading="lazy">
+            <div class="meta">
+                <h4>lip LINER </h4>
+                <div class="price">100DH</div>
+            </div>
+            <p>ارسمي حدود الجمال بدقة مع قلم الشفاه الفاخر، ثبات يدوم وسلاسة في التطبيق لإطلالة متقنة كل يوم.
+
+            </p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="lip LINER" data-id="l1" data-price="110" tabindex="0">
+            <img src="UUUUUUUUUUUUUU.jpg" alt="lip LINER" loading="lazy">
+            <div class="meta">
+                <h4>lip LINER </h4>
+                <div class="price">100DH</div>
+            </div>
+            <p>ارسمي حدود الجمال بدقة مع قلم الشفاه الفاخر، ثبات يدوم وسلاسة في التطبيق لإطلالة متقنة كل يوم.
+
+            </p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+
+
+
+
+
+
+
+
+
+
+
+        <article class="card" data-category="lES CILS" data-id="l1" data-price="110" tabindex="0">
+            <img src="RM1.jpg" alt="lip LINER" loading="lazy">
+            <div class="meta">
+                <h4>lES CILS </h4>
+                <div class="price">100DH</div>
+            </div>
+            <p>"رموش تمنحك الكثافة التي تحلمين بها، بإطلالة طبيعية تأسر القلوب وتُبرز أنوثتك بلا حدود."
+
+
+            </p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="lES CILS" data-id="l1" data-price="110" tabindex="0">
+            <img src="RM2.jpg" alt="lip LINER" loading="lazy">
+            <div class="meta">
+                <h4>lES CILS</h4>
+                <div class="price">100DH</div>
+            </div>
+            <p>"رموش تمنحك الكثافة التي تحلمين بها، بإطلالة طبيعية تأسر القلوب وتُبرز أنوثتك بلا حدود."
+            </p>
+
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="lES CILS" data-id="l1" data-price="110" tabindex="0">
+            <img src="RM3.jpg" alt="lip LINER" loading="lazy">
+            <div class="meta">
+                <h4>lES CILS </h4>
+                <div class="price">100DH</div>
+            </div>
+            <p>"رموش تمنحك الكثافة التي تحلمين بها، بإطلالة طبيعية تأسر القلوب وتُبرز أنوثتك بلا حدود."
+
+            </p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="lES CILS" data-id="l1" data-price="110" tabindex="0">
+            <img src="RM4.jpg" alt="lip LINER" loading="lazy">
+            <div class="meta">
+                <h4>lES CILS </h4>
+                <div class="price">100DH</div>
+            </div>
+            <p>"رموش تمنحك الكثافة التي تحلمين بها، بإطلالة طبيعية تأسر القلوب وتُبرز أنوثتك بلا حدود."
+            </p>
+
+
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="lES CILS" data-id="l1" data-price="110" tabindex="0">
+            <img src="RM5.jpg" alt="lip LINER" loading="lazy">
+            <div class="meta">
+                <h4>lES CILS </h4>
+                <div class="price">100DH</div>
+            </div>
+            <p>"رموش تمنحك الكثافة التي تحلمين بها، بإطلالة طبيعية تأسر القلوب وتُبرز أنوثتك بلا حدود."
+            </p>
+
+
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="LES GLOSES" data-id="l1" data-price="110" tabindex="0">
+            <img src="GL1.jpg" alt="Rouge à Lèvre — Rouge" loading="lazy">
+            <div class="meta">
+                <h4></h4>
+                <div class="price">90DH</div>
+            </div>
+            <p>لمعة ناعمة كتعطي الشفايف بريق طبيعي</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <article class="card" data-category="LES GLOSES" data-id="l1" data-price="110" tabindex="0">
+            <img src="GL1.jpg" alt="Rouge à Lèvre — Rouge" loading="lazy">
+            <div class="meta">
+                <h4>LES GLOUSES</h4>
+                <div class="price">90DH</div>
+            </div>
+            <p>لمعة ناعمة كتعطي الشفايف بريق طبيعي</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="LES GLOSES" data-id="l1" data-price="110" tabindex="0">
+            <img src="GL2.jpg" alt="Rouge à Lèvre — Rouge" loading="lazy">
+            <div class="meta">
+                <h4>LES GLOUSES</h4>
+                <div class="price">90DH</div>
+            </div>
+            <p>لمعة ناعمة كتعطي الشفايف بريق طبيعي</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="LES GLOSES" data-id="l1" data-price="110" tabindex="0">
+            <img src="GL3.jpg" alt="Rouge à Lèvre — Rouge" loading="lazy">
+            <div class="meta">
+                <h4>LES GLOUSES</h4>
+                <div class="price">90DH</div>
+            </div>
+            <p>لمعة ناعمة كتعطي الشفايف بريق طبيعي</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="LES GLOSES" data-id="l1" data-price="110" tabindex="0">
+            <img src="GL4.jpg" alt="Rouge à Lèvre — Rouge" loading="lazy">
+            <div class="meta">
+                <h4>LES GLOUSES</h4>
+                <div class="price">90DH</div>
+            </div>
+            <p>لمعة ناعمة كتعطي الشفايف بريق طبيعي</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="LES GLOSES" data-id="l1" data-price="110" tabindex="0">
+            <img src="GL5.jpg" alt="Rouge à Lèvre — Rouge" loading="lazy">
+            <div class="meta">
+                <h4>LES GLOUSES</h4>
+                <div class="price">90DH</div>
+            </div>
+            <p>لمعة ناعمة كتعطي الشفايف بريق طبيعي</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="LES GLOSES" data-id="l1" data-price="110" tabindex="0">
+            <img src="GL6.jpg" alt="Rouge à Lèvre — Rouge" loading="lazy">
+            <div class="meta">
+                <h4>LES GLOUSES</h4>
+                <div class="price">90DH</div>
+            </div>
+            <p>لمعة ناعمة كتعطي الشفايف بريق طبيعي</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+        <article class="card" data-category="Blender" data-id="l1" data-price="110" tabindex="0">
+            <img src="BETY.jpg" alt="Rouge à Lèvre — Rouge" loading="lazy">
+            <div class="meta">
+                <h4>BEUTY Blender</h4>
+                <div class="price">46DH</div>
+            </div>
+            <p>أداة صغيرة… نتائج كبيرة لكل لوك</p>
+            <div class="actions">
+
+                <button class="btn" onclick="addToCart('l1')">إضافة للسلة</button>
+            </div>
+        </article>
+
+    </section>
+
+
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p class="footer-text">© <span id="year"></span> Nivoralux — Tous droits réservés</p>
+        <div class="social-icons" role="list">
+            <a href="https://wa.me/212617327706" target="_blank" rel="noopener" aria-label="واتساب"><img
+                    src="https://cdn-icons-png.flaticon.com/512/733/733585.png" class="icon" alt="WhatsApp"></a>
+            <a href="https://www.instagram.com/bouaouadnora" target="_blank" rel="noopener" aria-label="انستغرام"><img
+                    src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="icon" alt="Instagram"></a>
+            <a href="https://facebook.com/اسم_الصفحة" target="_blank" rel="noopener" aria-label="فيسبوك"><img
+                    src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="icon" alt="Facebook"></a>
+        </div>
+    </footer>
+    </div>
+
+    <!-- PRODUCT MODAL -->
+    <div id="product-modal" class="modal" aria-hidden="true">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <div>
+                <img id="modal-img" src="img/foundation1.jpg" alt="صورة المنتج">
+            </div>
+            <div class="modal-details">
+                <div style="display:flex;justify-content:space-between;align-items:start">
+                    <div>
+                        <h3 id="modal-title">Product</h3>
+                        <div id="modal-price" style="font-weight:700;color:var(--accent1)">0 DH</div>
+                    </div>
+                    <button class="close-btn" onclick="closeModal()" aria-label="إغلاق">✕</button>
+                </div>
+                <p id="modal-desc" style="color:var(--muted)"></p>
+                <div style="margin-top:10px;display:flex;gap:10px">
+                    <button class="btn" id="modal-add">إضافة للسلة</button>
+                    <button class="btn alt" onclick="closeModal()">رجوع</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CART MODAL -->
+    <div id="cart-modal" class="modal" aria-hidden="true">
+        <div style="background:#fff;padding:18px;border-radius:12px;max-width:520px;width:92%">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+                <h3 style="margin:0">السلة</h3>
+                <button class="close-btn" onclick="toggleCart()" aria-label="اغلاق السلة">✕</button>
+            </div>
+            <div id="cart-items" style="margin-top:12px"></div>
+            <div style="margin-top:12px;display:flex;justify-content:space-between;align-items:center">
+                <strong>المجموع:</strong>
+                <strong id="cart-total">0 DH</strong>
+            </div>
+            <div style="margin-top:12px;display:flex;gap:8px;justify-content:flex-end">
+                <button class="btn alt" onclick="clearCart()">تفريغ السلة</button>
+                <button id="checkout-btn">ادفع الآن</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Small helpers
+        const $ = s => document.querySelector(s);
+        const $$ = s => Array.from(document.querySelectorAll(s));
+
+        // set year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // PRODUCT DATA (single source)
+        const PRODUCTS = {
+            f1: { id: 'f1', title: 'Satin Foundation — Beige', price: 180, desc: 'تغطية متوسطة قابلة للبناء، لمسة نهائية ساتان.', img: 'img/foundation1.jpg' },
+            f2: { id: 'f2', title: 'Satin Foundation — Honey', price: 200, desc: 'مقاوم للتعرق، يدوم طوال اليوم مع لمسة طبيعية.', img: 'img/foundation2.jpg' },
+            f3: { id: 'f3', title: 'Satin Foundation — Almond', price: 210, desc: 'تركيبة خفيفة ومغذية مع SPF خفيف.', img: 'img/foundation3.jpg' },
+            p1: { id: 'p1', title: 'Eyes Palette — Warm', price: 150, desc: 'لوحة ألوان دافئة بمات ولامع — مناسبة للسهرات.', img: 'img/palette1.jpg' },
+            p2: { id: 'p2', title: 'Eyes Palette — Nude', price: 160, desc: 'ألوان طبيعية للروز اليومية، سهل الدمج.', img: 'img/palette2.jpg' },
+            m1: { id: 'm1', title: 'Mascara — Volume', price: 90, desc: 'تكثيف ورفع للرموش بلا تكتل.', img: 'img/mascara1.jpg' },
+            m2: { id: 'm2', title: 'Mascara — Length', price: 95, desc: 'تركيبة تطويل وتنسيق دون تلطخ.', img: 'img/mascara2.jpg' },
+            b1: { id: 'b1', title: 'Beauty Blender — Soft', price: 45, desc: 'اسفنجة ناعمة للتوزيع المتساوي للفاونديشن.', img: 'img/blender1.jpg' },
+            l1: { id: 'l1', title: 'Rouge à Lèvre — Rouge', price: 110, desc: 'لون غني وترطيب مع لمسة نهائية شبه لامعة.', img: 'img/lipstick1.jpg' },
+            l2: { id: 'l2', title: 'Rouge à Lèvre — Nude', price: 115, desc: 'درجة طبيعية مع تغطية متوسطة وترطيب.', img: 'img/lipstick2.jpg' }
+        };
+
+        // FILTERS
+        const filterBtns = $$('.filter-btn');
+        const cards = $$('.card');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const f = btn.dataset.filter;
+                cards.forEach(c => {
+                    if (f === 'all' || c.dataset.category === f) c.style.display = '';
+                    else c.style.display = 'none';
+                });
+            });
+        });
+
+        // SORT
+        $('#sort').addEventListener('change', (e) => {
+            const val = e.target.value;
+            const container = document.querySelector('#products');
+            const nodes = Array.from(container.children);
+            if (val === 'price-asc') nodes.sort((a, b) => +a.dataset.price - +b.dataset.price);
+            else if (val === 'price-desc') nodes.sort((a, b) => +b.dataset.price - +a.dataset.price);
+            else nodes.sort((a, b) => a.dataset.id.localeCompare(b.dataset.id));
+            nodes.forEach(n => container.appendChild(n));
+        });
+
+        // SEARCH (simple)
+        $('#search-input').addEventListener('input', (e) => {
+            const q = e.target.value.trim().toLowerCase();
+            cards.forEach(c => {
+                const title = c.querySelector('h4').textContent.toLowerCase();
+                const desc = c.querySelector('p').textContent.toLowerCase();
+                if (!q || title.includes(q) || desc.includes(q)) c.style.display = '';
+                else c.style.display = 'none';
+            });
+        });
+
+        // MODAL
+        const modal = $('#product-modal');
+        function openProductModal(id) {
+            const p = PRODUCTS[id];
+            if (!p) return;
+            $('#modal-img').src = p.img;
+            $('#modal-title').textContent = p.title;
+            $('#modal-price').textContent = p.price + ' DH';
+            $('#modal-desc').textContent = p.desc;
+            $('#modal-add').onclick = () => { addToCart(id); closeModal(); }
+            modal.classList.add('open'); modal.setAttribute('aria-hidden', 'false');
+        }
+        function closeModal() {
+            modal.classList.remove('open'); modal.setAttribute('aria-hidden', 'true');
+        }
+        window.openProductModal = openProductModal;
+        modal.addEventListener('click', (e) => { if (e.target === modal) closeModal() });
+
+        // CART (localStorage)
+        let CART = JSON.parse(localStorage.getItem('niv_cart') || '{}');
+        const cartCountEl = $('#cart-count');
+        function saveCart() { localStorage.setItem('niv_cart', JSON.stringify(CART)); updateCartUI(); }
+
+        function addToCart(id) {
+            if (!PRODUCTS[id]) return;
+            CART[id] = (CART[id] || 0) + 1;
+            saveCart();
+            flashMessage('✔ تمت الإضافة إلى السلة');
+        }
+        function updateCartUI() {
+            const totalItems = Object.values(CART).reduce((s, n) => s + n, 0);
+            cartCountEl.textContent = totalItems;
+        }
+        updateCartUI();
+
+        function toggleCart() {
+            const el = document.getElementById('cart-modal');
+            el.classList.toggle('open');
+            if (el.classList.contains('open')) renderCartItems();
+            el.setAttribute('aria-hidden', !el.classList.contains('open'));
+        }
+        document.getElementById('open-cart').addEventListener('click', toggleCart);
+
+        function renderCartItems() {
+            const container = $('#cart-items'); container.innerHTML = '';
+            let total = 0;
+            for (const id in CART) {
+                const qty = CART[id]; const p = PRODUCTS[id];
+                if (!p) continue;
+                const item = document.createElement('div');
+                item.style.display = 'flex'; item.style.justifyContent = 'space-between'; item.style.alignItems = 'center'; item.style.padding = '8px 0';
+                item.innerHTML = `<div style="max-width:70%"><strong style="display:block">${p.title}</strong><small class="muted">${qty} × ${p.price} DH</small></div>
+          <div style="display:flex;gap:8px;align-items:center">
+            <button class="icon-btn" onclick="dec('${id}')">−</button>
+            <button class="icon-btn" onclick="inc('${id}')">+</button>
+            <button class="icon-btn" onclick="removeItem('${id}')" aria-label="حذف">✕</button>
+          </div>`;
+                container.appendChild(item);
+                total += qty * p.price;
+            }
+            $('#cart-total').textContent = total + ' DH';
+        }
+
+        function inc(id) { CART[id] = (CART[id] || 0) + 1; saveCart(); renderCartItems(); }
+        function dec(id) { if (!CART[id]) return; CART[id]--; if (CART[id] <= 0) delete CART[id]; saveCart(); renderCartItems(); }
+        function removeItem(id) { delete CART[id]; saveCart(); renderCartItems(); }
+
+        function clearCart() { if (confirm('تفريغ السلة؟')) { CART = {}; saveCart(); renderCartItems(); } }
+        function checkout() { alert('شكراً! سيتم توجيهك لصفحة الدفع (وهمي حالياً).'); CART = {}; saveCart(); renderCartItems(); toggleCart(); }
+
+        document.getElementById('checkout-btn').addEventListener('click', function () {
+            // تحويل الزبون مباشرة لصفحة الدفع
+            window.location.href = "POOOOPO.HTML?total=3000"; // 3000 مثال للمجموع
+        });
+        // FLASH
+        function flashMessage(msg) {
+            const el = document.createElement('div');
+            el.textContent = msg; el.style.position = 'fixed'; el.style.left = '20px'; el.style.bottom = '20px';
+            el.style.background = 'rgba(0,0,0,0.8)'; el.style.color = '#fff'; el.style.padding = '10px 14px'; el.style.borderRadius = '10px'; el.style.zIndex = 200;
+            document.body.appendChild(el);
+            setTimeout(() => el.remove(), 1500);
+        }
+
+
+
+        // ESC close
+        window.addEventListener('keydown', (e) => { if (e.key === 'Escape') { closeModal(); const cm = document.getElementById('cart-modal'); if (cm.classList.contains('open')) toggleCart(); } });
+
+        // small: keyboard accessible cards (Enter to open)
+        cards.forEach(c => {
+            c.addEventListener('keydown', (e) => { if (e.key === 'Enter') openProductModal(c.dataset.id); });
+        });
+
+    </script>
+</body>
+
+</html>

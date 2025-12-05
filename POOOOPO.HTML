@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة الدفع - Nivoralux</title>
+    <style>
+        body {
+            font-family: 'Tahoma';
+            background: #f8f5f3;
+            padding: 20px;
+        }
+
+        .payment-container {
+            background: #fff;
+            max-width: 400px;
+            margin: auto;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+        }
+
+        h1 {
+            text-align: center;
+            color: #c27ba0;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 12px;
+            background: #c27ba0;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #a55a87;
+        }
+
+        #success-message {
+            display: none;
+            color: green;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="payment-container">
+        <h1>الدفع</h1>
+        <p>المجموع النهائي: <strong id="total">0 DH</strong></p>
+
+        <form id="payment-form">
+            <label>الإسم الكامل</label>
+            <input type="text" required>
+
+            <label>البريد الإلكتروني</label>
+            <input type="email" required>
+
+            <label>رقم البطاقة</label>
+            <input type="text" placeholder="1234 5678 9012 3456" required>
+
+            <label>تاريخ الانتهاء</label>
+            <input type="text" placeholder="MM/YY" required>
+
+            <label>CVV</label>
+            <input type="text" placeholder="123" required>
+
+            <button type="submit">تأكيد الدفع</button>
+        </form>
+
+        <p id="success-message">تم تأكيد الدفع بنجاح ❤</p>
+    </div>
+
+    <script>
+        // استرجاع المجموع من URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const total = urlParams.get('total');
+        document.getElementById('total').textContent = total + ' DH';
+
+        // فورم غير حقيقي (بلعاني)
+        document.getElementById('payment-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            document.getElementById('success-message').style.display = "block";
+        });
+    </script>
+</body>
+
+</html>

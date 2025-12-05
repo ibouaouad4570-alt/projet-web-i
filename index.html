@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NIVORA LUX</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background: var(--bg);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #e6dfcd;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px;
+        }
+
+        header .logo {
+            font-weight: bold;
+            font-size: 22px;
+            letter-spacing: 2px;
+            color: #b9975b;
+        }
+
+        nav a {
+            margin-left: 25px;
+            color: #5b4a26;
+            text-decoration: none;
+            font-size: 16px;
+            font-family: Georgia, serif;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* MAIN يملأ الشاشة كاملة */
+        main {
+            flex: 1;
+            min-height: 100vh;
+            /* يغطي الشاشة */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* وسط عمودياً */
+            align-items: center;
+            /* وسط أفقياً */
+            padding: 20px;
+            text-align: center;
+        }
+
+        main h1 {
+            font-size: 80px;
+            color: #3e2f0d;
+            margin-bottom: 10px;
+        }
+
+        main p {
+            font-size: 20px;
+            color: #6e664a;
+            margin-bottom: 10px;
+            font-family: Georgia, serif;
+            max-width: 600px;
+        }
+
+        button {
+            background-color: #b9975b;
+            border: none;
+            color: white;
+            padding: 12px 25px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 20px;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #9c8142;
+        }
+
+        /* FOOTER — كامل وكيبان غير فالسكرول */
+        footer {
+            background-color: #222;
+            color: #cfcfcf;
+            padding: 40px 30px 20px 30px;
+        }
+
+        footer .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        footer .footer-column {
+            flex: 1 1 200px;
+            margin: 0 15px;
+        }
+
+        footer h3 {
+            color: #b9975b;
+            font-style: italic;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        footer p,
+        footer a,
+        footer li {
+            color: #cfcfcf;
+            line-height: 1.6em;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer a {
+            color: #cfcfcf;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer .contact-info i {
+            margin-right: 8px;
+            color: #b9975b;
+        }
+
+        footer .bottom-bar {
+            text-align: center;
+            border-top: 1px solid #555;
+            margin-top: 30px;
+            padding-top: 15px;
+            font-size: 13px;
+            color: #888;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">NIVORA LUX</div>
+        <nav>
+            <a href="#">Accueil</a>
+            <a href="parfum.html">Parfums</a>
+            <a href="mkub.html">Maquillage</a>
+            <!-- <a href="#">Contact</a> -->
+        </nav>
+    </header>
+
+    <main>
+        <h1>Découvrez Votre Signature Olfactive</h1>
+        <p>Collection exclusive de parfums de luxe et Maquillage de luxe pour femmes</p>
+        <p>Alliant élégance et raffinement, nos parfums d'exception et Maquillage masubliment votre beauté naturelle.
+        </p>
+        <button>Découvrir la Collection</button>
+    </main>
+
+
+    <footer>
+        <div class="footer-container">
+
+            <div class="footer-column">
+                <h3>Nivora Luxe</h3>
+                <p>Votre destination pour les parfums de luxe et Maquillage de luxe . Découvrez notre collection
+                    exclusive de fragrances authentiques.</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Liens Rapides</h3>
+                <ul>
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">Parfums</a></li>
+                    <li><a href="#">Maquillage</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Service Client</h3>
+                <ul>
+                    <li>Livraison & Retours</li>
+                    <li>Guide des Tailles</li>
+                    <li>FAQ</li>
+                    <li>Support</li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <p class="contact-info">
+                    <i class="fas fa-envelope"></i> contact@Nivora.com<br>
+                    <i class="fas fa-phone"></i> +33 1 23 45 67 89<br>
+                    <i class="fas fa-map-marker-alt"></i> Marakech, sidi abad
+                </p>
+            </div>
+
+        </div>
+
+        <div class="bottom-bar">
+            &copy; 2025 Nivora Luxe. Tous droits réservés.
+        </div>
+    </footer>
+
+</body>
+
+</html>
